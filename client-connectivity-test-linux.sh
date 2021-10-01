@@ -9,16 +9,6 @@ set -e
 echo "Welcome to K-Net Script for IPv4 Client connectivity testing. Version 0.0.1-alpha."
 echo ""
 
-
-echo "Running as root?"
-if [[ $(id -u $USER) != 0 ]]
-then
-    echo "Please run script as root"
-    exit 1
-fi
-echo "OK"
-echo ""
-
 echo "Check required packages are installed"
 
 echo "Is ping installed?"
@@ -41,10 +31,10 @@ echo "Check no 1: Can renew DHCP lease and get K-Net IP"
 echo ""
 
 echo "Release lease"
-dhclient -r
+sudo dhclient -r
 
 echo "Renew lease"
-dhclient
+sudo dhclient
 
 # Wait for DHCP lease
 
