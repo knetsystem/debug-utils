@@ -88,6 +88,6 @@ echo "OK"
 echo "Check no 4: Check for internet reachability"
 echo ""
 
-echo "Ping known external IP"
-ping -c 1 1.1.1.1 2>&1 >/dev/null
+echo "Ping known external service"
+bash -c ./external-ping.sh
 echo "OK"
